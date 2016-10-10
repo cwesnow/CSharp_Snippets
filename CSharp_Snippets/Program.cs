@@ -276,72 +276,52 @@ namespace CSharp_Snippets
             Console.Clear();
             Console.WriteLine("OOP Design Principals");
 
+            // Default Values Example
             Person owner = new Person();
-            Dog pet1 = new Dog();
-            Cat pet2 = new Cat();
-            owner.speak();
-            pet1.speak();
-            pet2.speak();
+
+            Person friend = new Person("Jimmy", "Pizza");
+            Dog pet1 = new Dog("Dog","Dog Food");
+            Cat pet2 = new Cat("Cat","Cat Food");
+
+            // Abstract Class made sure every object had a Name and a Diet property
+            // Interface made sure every class uses same Method()
+
+            // Test: owner Object has null or empty values
+            Console.WriteLine(
+                owner.speak()
+                );
+
+            // Test: owner Object has a Name
+            owner.changeName("Owner");
+            Console.WriteLine(
+                 owner.speak()
+                );
+
+            // Test: owner Object has a Diet
+            owner.changeDiet("CheeseBurgers");
+            Console.WriteLine(
+                owner.speak()
+                );
+            
+
+            Console.WriteLine(
+                friend.speak()
+            );
+
+            Console.WriteLine(
+                pet1.myNameDiet() +
+                " I say " +
+                pet1.speak()
+                );
+
+            Console.WriteLine(
+                pet2.myNameDiet() +
+                " I say " +
+                pet2.speak()
+                );
+            
             Console.ReadKey();
-
         }
     }
 
-
-    abstract class Animal
-    {
-        public string name;
-        public string diet;
-
-        public Animal()
-        {
-            name = "Animal";
-        }
-        public string called() { return name; }
-    }
-
-    interface Ispeak
-    {
-        void speak();
-    }
-
-    class Dog : Animal, Ispeak
-    {
-        public Dog()
-        {
-            name = "Dog";
-        }
-
-        public void speak()
-        {
-            Console.WriteLine("{0}: Woof Woof", this.called());
-        }
-    }
-
-    class Cat : Animal, Ispeak
-    {
-        public Cat()
-        {
-            name = "Cat";
-        }
-
-        public void speak()
-        {
-            Console.WriteLine("{0}: Meow", this.called());
-        }
-    }
-
-    class Person : Animal, Ispeak
-    {
-        public Person()
-        {
-            name = "Person";
-        }
-
-        public void speak()
-        {
-            name = "Bill";
-            Console.WriteLine("{0}: Greetings, and don't mind my pets.  They love to talk!", this.called());
-        }
-    }
 }

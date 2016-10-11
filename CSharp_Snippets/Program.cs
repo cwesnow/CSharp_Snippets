@@ -13,9 +13,10 @@ namespace CSharp_Snippets
             // Main Menu
             Console.WriteLine(
                 "{0}Welcome to C#{0}" +
-                "{0}[1] SpaceShip{0}" +
-                "{0}[2] Registration{0}" +
-                "{0}[3] OOP{0}", Environment.NewLine
+                "{0}[1] SpaceShip - Console Output, Loops{0}" +
+                "{0}[2] Calculator - Math" +
+                "{0}[3] Registration - Enter Date{0}" +
+                "{0}[4] OOP{0} - Abstract & Interface", Environment.NewLine
                 );
             
             x = getInput();
@@ -23,8 +24,9 @@ namespace CSharp_Snippets
             Console.Clear();
             
             if (x == 1) { spaceship(); }
-            if (x == 2) { registration(); }
-            if (x == 3) { oop(); }
+            if (x == 2) { calculator(); }
+            if (x == 3) { registration(); }
+            if (x == 4) { oop(); }
         }
 
         static void screenSetup()
@@ -208,6 +210,52 @@ namespace CSharp_Snippets
                 }
                 Console.WriteLine();
             }
+
+            Console.ReadKey();
+        }
+
+        static void calculator()
+        {
+            bool validInput = false;
+            string operation;
+            decimal one = 0m;
+            decimal two = 0m;
+            decimal ans = 0m;
+
+            do
+            {
+                Console.WriteLine("Input First Number");
+                validInput = decimal.TryParse(Console.ReadLine(), out one);
+            } while (validInput == false);
+
+            do
+            {
+                Console.WriteLine("Which Operation: + - * /");
+                operation = Console.ReadLine();
+                if (operation == "+" || operation == "-" || operation == "*" || operation == "/") validInput = true;
+                else validInput = false;
+            } while (validInput == false);
+
+
+            do
+            {
+                Console.WriteLine("Input Second Number");
+                validInput = decimal.TryParse(Console.ReadLine(), out two);
+            } while (validInput == false);
+
+            if (operation == "+") ans = one + two;
+            if (operation == "-") ans = one - two;
+            if (operation == "*") ans = one * two;
+            if (operation == "/")
+            {
+                if (two > 0) { ans = one / two; }
+                else {
+                    Console.WriteLine("Can't divide by zero");
+                    ans = 0; }
+                
+            }
+
+            Console.WriteLine("Output: {0} {1} {2} = {3}", one, operation, two, ans);
 
             Console.ReadKey();
         }

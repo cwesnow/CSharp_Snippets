@@ -14,9 +14,12 @@ namespace CSharp_Snippets
             Console.WriteLine(
                 "{0}Welcome to C#{0}" +
                 "{0}[1] SpaceShip - Console Output, Loops{0}" +
-                "{0}[2] Calculator - Math" +
-                "{0}[3] Registration - Enter Date{0}" +
-                "{0}[4] OOP{0} - Abstract & Interface", Environment.NewLine
+                "{0}[2] Calculator - Math{0}" +
+                "{0}[3] Guess my Number - Computer guesses your number{0}" +
+                "{0}[4] Registration - Enter Date{0}" +
+                "{0}[5] OOP{0} - Abstract & Interface" +
+                "{0}[6] Auction Posts - Using Lists"
+                , Environment.NewLine
                 );
             
             x = getInput();
@@ -25,8 +28,10 @@ namespace CSharp_Snippets
             
             if (x == 1) { spaceship(); }
             if (x == 2) { calculator(); }
-            if (x == 3) { registration(); }
-            if (x == 4) { oop(); }
+            if (x == 3) { guessMyNumber(); }
+            if (x == 4) { registration(); }
+            if (x == 5) { oop(); }
+            if (x == 6) { AuctionPosts.play(); }
         }
 
         static void screenSetup()
@@ -257,6 +262,34 @@ namespace CSharp_Snippets
 
             Console.WriteLine("Output: {0} {1} {2} = {3}", one, operation, two, ans);
 
+            Console.ReadKey();
+        }
+
+        static void guessMyNumber()
+        {
+            string intro = "Welcome to the Game";
+            string askMAX = "What's the biggest number possible";
+            string askHighLow = "Was this correct, too low, or too high?";
+            string won = "That only took x guess, try a harder number next time!";
+            string error = "According to my Logic this number is impossible.";
+            string userSaid;
+            int minimum = 0;
+            int maximum = 10;
+            int lastGuess = 1;
+            Random guess = new Random();
+
+            do{
+                if(minimum < maximum) lastGuess = guess.Next(minimum, maximum);
+                if (minimum > maximum) Console.WriteLine(error);
+                Console.WriteLine(lastGuess + askHighLow);
+                userSaid = Console.ReadLine();
+                if (userSaid.ToUpper() == "LOW")
+                    minimum = lastGuess;
+                if (userSaid.ToUpper() == "HIGH")
+                    maximum = lastGuess;
+            } while ( userSaid.ToUpper() != "CORRECT" );
+            
+            Console.WriteLine(won);
             Console.ReadKey();
         }
 

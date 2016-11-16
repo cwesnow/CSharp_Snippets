@@ -18,7 +18,8 @@ namespace CSharp_Snippets
                 "{0}[3] Guess my Number - Computer guesses your number{0}" +
                 "{0}[4] Registration - Enter Date{0}" +
                 "{0}[5] OOP{0} - Abstract & Interface" +
-                "{0}[6] Auction Posts - Using Lists"
+                "{0}[6] Auction Posts - Using Lists" +
+                "{0}[7] Exception Handling - Number Range"
                 , Environment.NewLine
                 );
             
@@ -32,6 +33,7 @@ namespace CSharp_Snippets
             if (x == 4) { registration(); }
             if (x == 5) { oop(); }
             if (x == 6) { AuctionPosts.play(); }
+            if (x == 7) { ThrowException.play(); }
         }
 
         static void screenSetup()

@@ -37,7 +37,7 @@ namespace CSharp_Snippets
         private static bool checkCredit(int score)
         {
             if (350 > score || score > 850) throw new System.ArgumentOutOfRangeException();
-            return (650 <= score && score <= 850);
+            return (650 <= score);
         }
     }
 }

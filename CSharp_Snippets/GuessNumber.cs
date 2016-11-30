@@ -33,11 +33,9 @@ namespace CSharp_Snippets
                         break;
                 }
                 errorCheck(minimum, maximum);
-                
-                if(minimum == maximum) win(guessedNumber);
-                
-                Console.WriteLine("Min: {0} \t Max: {1}", minimum, maximum);                
+                if (minimum == maximum) win(guessedNumber);
             }
+
             Console.ReadKey();
         }
 
@@ -65,17 +63,19 @@ namespace CSharp_Snippets
         {
             string input = "";
 
-            while (input != "CORRECT" && input != "LOW" && input != "HIGH")
+            do
             {
-                Console.WriteLine("Am I Correct, Low, or High? : old input was " + input);
+                Console.WriteLine("Is my guess Correct, Low, or High?");
                 input = Console.ReadLine().ToUpper();
             }
+            while (input != "CORRECT" && input != "LOW" && input != "HIGH");
+
             return input;
         }
 
         private static void win(int x)
         {
-            Console.WriteLine("Your number was {0}!", x);
+            Console.WriteLine("Your number is {0}!", x);
         }
 
     }

@@ -2,15 +2,45 @@
 
 namespace CSharp_Snippets
 {
+    /// <summary>
+    /// Builds a Spaceship inside a Console Screen
+    /// </summary>
     class Spaceship
     {
+        /// <summary>
+        /// Program draws a spaceship 3 different ways
+        /// </summary>
         public static void play()
         {
             Console.Clear();
 
             // Version 1.0 - The direct approach
             Console.WriteLine("Making a spaceship with a Console.WriteLine( \"Spaceship\");");
+            spaceship1();
+            Console.ReadKey();
+            Console.Clear();
 
+            //Version 2.0 - Basic Programatic Solution
+            //Improvements: Easier to fix a single Line typo than multiple lines, a quick reference change fixes sequencing mistakes
+            Console.WriteLine("Making a spaceship using several string Variables");
+            spaceship2();
+            Console.ReadKey();
+            Console.Clear();
+
+            // Version 3.0 - An overly complicated example
+            // This would not be fun to maintain or fix later
+            // Challenge: Create the spaceship using loops
+            Console.WriteLine("Making a spaceship with Loops");
+            spaceship3();
+            Console.ReadKey();
+            Console.Clear();
+        }
+
+        /// <summary>
+        /// Draw a Spaceship
+        /// </summary>
+        public static void spaceship1()
+        {
             Console.WriteLine(
                 "   /**\\       {0}" +
                 "  //**\\\\     {0}" +
@@ -31,13 +61,13 @@ namespace CSharp_Snippets
                 " ///**\\\\\\   {0}"
                 , Environment.NewLine
                 );
+        }
 
-            Console.ReadKey();
-            Console.Clear();
-
-            //Version 2.0 - Basic Programatic Solution
-            //Improvements: Easier to fix a single Line typo than multiple lines, a quick reference change fixes sequencing mistakes
-            Console.WriteLine("Making a spaceship using several string Variables");
+        /// <summary>
+        /// Draw a Spaceship using a String Variables
+        /// </summary>
+        public static void spaceship2()
+        {
 
             string A = "   /**\\";
             string B = "  //**\\\\";
@@ -48,37 +78,36 @@ namespace CSharp_Snippets
             string G = "|\\/\\/\\/\\/|";
             string H = "|.\\/..\\/.|";
 
+            //Using WriteLine("{0}{2}", arg0, arg1, arg2); for simplification
             Console.WriteLine(
-                "{0}{8}" +
-                "{1}{8}" +
-                "{2}{8}" +
-                "{3}{8}" +
-                "{4}{8}" +
-                "{5}{8}" +
-                "{6}{8}" +
-                "{7}{8}" +
-                "{3}{8}" +
-                "{6}{8}" +
-                "{7}{8}" +
-                "{4}{8}" +
-                "{5}{8}" +
-                "{3}{8}" +
-                "{0}{8}" +
-                "{1}{8}" +
-                "{2}{8}"
-                , A, B, C, D, E, F, G, H, Environment.NewLine
-            );
+                "{0}{8}" + //A
+                "{1}{8}" + //B
+                "{2}{8}" + //C
+                "{3}{8}" + //D
+                "{4}{8}" + //E
+                "{5}{8}" + //F
+                "{6}{8}" + //G
+                "{7}{8}" + //H
+                "{3}{8}" + //D
+                "{6}{8}" + //G
+                "{7}{8}" + //H
+                "{4}{8}" + //E
+                "{5}{8}" + //F
+                "{3}{8}" + //D
+                "{0}{8}" + //A
+                "{1}{8}" + //B
+                "{2}{8}"   //C
+                , A, B, C, D, E, F, G, H, Environment.NewLine);
+        }
 
-            Console.ReadKey();
-            Console.Clear();
-
-            // Version 3.0 - An overly complicated example
-            // This would not be fun to maintain or fix later
-            // Challenge: Create the spaceship using loops
-            Console.WriteLine("Making a spaceship with Loops");
-
+        /// <summary>
+        /// Draw a Spaceship using a Loop
+        /// </summary>
+        public static void spaceship3()
+        {
             for (int y = 2; y < 20; y++)
             {
+                #region Line A
                 // Output:    /**\   
                 if (y == 2 || y == 16)
                 {
@@ -90,7 +119,8 @@ namespace CSharp_Snippets
                         else if (x > 6) Console.Write("\\");
                     }
                 }
-
+                #endregion
+                #region Line B
                 // Output:   //**\\   
                 if (y == 3 || y == 17)
                 {
@@ -102,7 +132,8 @@ namespace CSharp_Snippets
                         else if (x > 6) Console.Write("\\");
                     }
                 }
-
+                #endregion
+                #region Line C
                 // Output:  ///**\\\
                 if (y == 4 || y == 18)
                 {
@@ -114,7 +145,8 @@ namespace CSharp_Snippets
                         else if (x > 6) Console.Write("\\");
                     }
                 }
-
+                #endregion
+                #region Line D
                 // Output: +=*=*=*=*+
                 if (y % 5 == 0)
                 {
@@ -125,7 +157,8 @@ namespace CSharp_Snippets
                         else Console.Write("*");
                     }
                 }
-
+                #endregion
+                #region Line E
                 // Output: |./\\../\\.|
                 if (y == 6 || y == 13)
                 {
@@ -137,7 +170,8 @@ namespace CSharp_Snippets
                         else Console.Write("\\");
                     }
                 }
-
+                #endregion
+                #region Line F
                 // Output: |/\\/\\/\\/\\|
                 if (y == 7 || y == 14)
                 {
@@ -148,7 +182,8 @@ namespace CSharp_Snippets
                         else Console.Write("\\");
                     }
                 }
-
+                #endregion
+                #region Line G
                 // Output: |\\/\\/\\/\\/|
                 if (y == 8 || y == 11)
                 {
@@ -159,7 +194,8 @@ namespace CSharp_Snippets
                         else Console.Write("/");
                     }
                 }
-
+                #endregion
+                #region Line H
                 // Output: |.\\/..\\/.|
                 if (y == 9 || y == 12)
                 {
@@ -171,10 +207,10 @@ namespace CSharp_Snippets
                         else Console.Write("/");
                     }
                 }
+                #endregion
                 Console.WriteLine();
             }
-
-            Console.ReadKey();
         }
+
     }
 }

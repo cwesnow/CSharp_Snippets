@@ -8,8 +8,13 @@ namespace CSharp_Snippets
         {
             bool isCreditGood = false;
             int credit = 0;
+            
+            Console.Clear();
+            Console.Write("{0}Error Handling Program{0}{0}" +
+                "Input Credit Score - Expected scores 350 to 850{0}" +
+                "Enter a Score >>> ",
+                Environment.NewLine);
 
-            Console.WriteLine("Input Credit Score");
             Int32.TryParse(Console.ReadLine(), out credit);
 
             try

@@ -33,7 +33,7 @@ namespace CSharp_Snippets
                         break;
                 }
                 errorCheck(minimum, maximum);
-                if (minimum == maximum) win(guessedNumber);
+                if (minimum == maximum) win(minimum);
             }
 
             Console.ReadKey();

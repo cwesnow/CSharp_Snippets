@@ -2,6 +2,9 @@
 
 namespace CSharp_Snippets
 {
+    /// <summary>
+    /// Calculator for the command line
+    /// </summary>
     class Calculator
     {
         public static void play(){
@@ -11,43 +14,46 @@ namespace CSharp_Snippets
             decimal two = 0m;
             decimal ans = 0m;
 
+            Console.Clear();
+            Console.WriteLine("{0}Calculator Application{0}{0}", Environment.NewLine);
+            
             do
             {
-                Console.WriteLine("Input First Number");
+                Console.Write("{0}Input First Number >>>", Environment.NewLine);
                 validInput = decimal.TryParse(Console.ReadLine(), out one);
-            } while (validInput == false);
+            } while ( !validInput );
 
             do
             {
-                Console.WriteLine("Which Operation: + - * /");
+                Console.Write("{0}Pick an Operation (+, -, *, / ) >>> ", Environment.NewLine);
                 operation = Console.ReadLine();
-                if (operation == "+" || operation == "-" || operation == "*" || operation == "/") validInput = true;
-                else validInput = false;
-            } while (validInput == false);
 
-
-            do
-            {
-                Console.WriteLine("Input Second Number");
-                validInput = decimal.TryParse(Console.ReadLine(), out two);
-            } while (validInput == false);
-
-            if (operation == "+") ans = one + two;
-            if (operation == "-") ans = one - two;
-            if (operation == "*") ans = one * two;
-            if (operation == "/")
-            {
-                if (two > 0) { ans = one / two; }
+                if (operation == "+" || operation == "-" || operation == "*" || operation == "/")
+                    validInput = true;
                 else
                 {
-                    Console.WriteLine("Can't divide by zero");
-                    ans = 0;
+                    Console.WriteLine("Error! That is not a valid operation");
+                    validInput = false;
                 }
 
+            } while ( !validInput );
+
+            do
+            {
+                Console.Write("{0}Input Second Number >>>", Environment.NewLine);
+                validInput = decimal.TryParse(Console.ReadLine(), out two);
+            } while ( !validInput );
+
+            if (operation == "/" && two == 0)
+                Console.WriteLine("Error! Dividing by Zero is Undefined");
+            else {
+                if (operation == "+") ans = one + two;
+                if (operation == "-") ans = one - two;
+                if (operation == "*") ans = one * two;
+                if (operation == "/") ans = one / two;
+                Console.WriteLine("Output: {0} {1} {2} = {3}", one, operation, two, ans);
             }
-
-            Console.WriteLine("Output: {0} {1} {2} = {3}", one, operation, two, ans);
-
+                
             Console.ReadKey();
         }
     }

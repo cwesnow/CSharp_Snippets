@@ -18,19 +18,16 @@
             string message;
 
             if (this.name == null || name.Length == 0) {
-                message = "I don't have a name yet.";
+                message = "I don't let just anybody know my real name.";
             }
             else
             {
-                message = "Greetings, my name is " + this.name + ".";
+                message = "Greetings, you can call me " + this.name + ".";
             }
 
-            if (this.diet == null || diet.Length == 0)
+            if (this.diet != null && diet.Length > 0)
             {
-                message += " I don't know what I like yet.";
-            } else
-            {
-                message += " I like to eat " + this.diet + ".";
+                message += " I love " + this.diet + ".";
             }
 
             return message;

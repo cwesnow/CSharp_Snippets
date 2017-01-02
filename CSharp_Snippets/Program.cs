@@ -20,7 +20,8 @@ namespace CSharp_Snippets
                 "[4] Registration - Enter Date{0}" +
                 "[5] OOP - Abstract & Interface{0}" +
                 "[6] Auction Posts - Using Lists{0}" +
-                "[7] Exception Handling - Number Range{0}"
+                "[7] Exception Handling - Number Range{0}" +
+                "[8] Farenheit conversion to Celsius"
                 , Environment.NewLine
                 );
 
@@ -33,6 +34,7 @@ namespace CSharp_Snippets
                 case 5: OOP.play(); break;
                 case 6: AuctionPosts.play(); break;
                 case 7: ThrowException.play(); break;
+                case 8: FarenheitToCelsius.play(); break;
                 default:
                     Console.WriteLine("Invalid number! Try another option or use {0} to quit.", QUIT);
                     Console.ReadKey();

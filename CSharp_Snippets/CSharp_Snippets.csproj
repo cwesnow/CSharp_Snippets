@@ -46,6 +46,7 @@
     <Compile Include="Calculator.cs" />
     <Compile Include="Cat.cs" />
     <Compile Include="Dog.cs" />
+    <Compile Include="FarenheitToCelsius.cs" />
     <Compile Include="GuessNumber.cs" />
     <Compile Include="ISpeak.cs" />
     <Compile Include="OOP.cs" />

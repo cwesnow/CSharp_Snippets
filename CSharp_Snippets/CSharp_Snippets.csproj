@@ -49,6 +49,7 @@
     <Compile Include="FarenheitToCelsius.cs" />
     <Compile Include="GuessNumber.cs" />
     <Compile Include="ISpeak.cs" />
+    <Compile Include="LengthEncoder.cs" />
     <Compile Include="OOP.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />

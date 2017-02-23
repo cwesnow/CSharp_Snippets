@@ -22,11 +22,12 @@ namespace CSharp_Snippets
                 "[6] Auction Posts - Using Lists{0}" +
                 "[7] Exception Handling - Number Range{0}" +
                 "[8] Farenheit conversion to Celsius{0}" +
-                "[9] Encoder"
+                "[9] Encoder{0}" +
+                "[10] Prime Numbers"
                 , Environment.NewLine
                 );
 
-            switch (getInput(0,9)) {
+            switch (getInput(0,10)) {
                 case QUIT: Environment.Exit(0); break;
                 case 1: Spaceship.play(); break;
                 case 2: Calculator.play(); break;
@@ -37,7 +38,7 @@ namespace CSharp_Snippets
                 case 7: ThrowException.play(); break;
                 case 8: FarenheitToCelsius.play(); break;
                 case 9: LengthEncoder.play(); break;
-
+                case 10: PrimeNumbers.play(); break;
                 default:
                     Console.WriteLine("Invalid number! Try another option or use {0} to quit.", QUIT);
                     Console.ReadKey();

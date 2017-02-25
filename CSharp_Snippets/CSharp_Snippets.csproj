@@ -47,6 +47,7 @@
     <Compile Include="Cat.cs" />
     <Compile Include="Dog.cs" />
     <Compile Include="FarenheitToCelsius.cs" />
+    <Compile Include="FiveDigits.cs" />
     <Compile Include="GuessNumber.cs" />
     <Compile Include="ISpeak.cs" />
     <Compile Include="LengthEncoder.cs" />

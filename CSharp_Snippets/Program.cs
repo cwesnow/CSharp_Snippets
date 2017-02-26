@@ -2,6 +2,7 @@
 
 namespace CSharp_Snippets
 {
+
     class Program
     {
         static void Main()
@@ -24,11 +25,12 @@ namespace CSharp_Snippets
                 "[8] Farenheit conversion to Celsius{0}" +
                 "[9] Encoder{0}" +
                 "[10] Prime Numbers{0}" +
-                "[11] 5 Unique Numbers"
+                "[11] 5 Unique Numbers{0}" +
+                "[12] Dictionary of Stats"
                 , Environment.NewLine
                 );
 
-            switch (getInput(0,11)) {
+            switch (getInput(0,12)) {
                 case QUIT: Environment.Exit(0); break;
                 case 1: Spaceship.play(); break;
                 case 2: Calculator.play(); break;
@@ -41,6 +43,8 @@ namespace CSharp_Snippets
                 case 9: LengthEncoder.play(); break;
                 case 10: PrimeNumbers.play(); break;
                 case 11: FiveDigits.play(); break;
+                case 12: DictionaryStats.play(); break;
+
                 default:
                     Console.WriteLine("Invalid number! Try another option or use {0} to quit.", QUIT);
                     Console.ReadKey();

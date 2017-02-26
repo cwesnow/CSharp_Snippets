@@ -45,6 +45,7 @@
     <Compile Include="AuctionPosts.cs" />
     <Compile Include="Calculator.cs" />
     <Compile Include="Cat.cs" />
+    <Compile Include="DictionaryStats.cs" />
     <Compile Include="Dog.cs" />
     <Compile Include="FarenheitToCelsius.cs" />
     <Compile Include="FiveDigits.cs" />

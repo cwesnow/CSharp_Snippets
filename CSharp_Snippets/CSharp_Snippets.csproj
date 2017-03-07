@@ -47,6 +47,7 @@
     <Compile Include="Cat.cs" />
     <Compile Include="DictionaryStats.cs" />
     <Compile Include="Dog.cs" />
+    <Compile Include="Equation.cs" />
     <Compile Include="FarenheitToCelsius.cs" />
     <Compile Include="FiveDigits.cs" />
     <Compile Include="GuessNumber.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="LengthEncoder.cs" />
     <Compile Include="OOP.cs" />
     <Compile Include="Person.cs" />
+    <Compile Include="Play.cs" />
     <Compile Include="PrimeNumbers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

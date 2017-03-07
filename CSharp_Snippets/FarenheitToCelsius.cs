@@ -1,8 +1,8 @@
 ﻿namespace CSharp_Snippets
 {
-    class FarenheitToCelsius
+    class FarenheitToCelsius : Play
     {
-        public static void play()
+        public void Play()
         {
             System.Console.WriteLine("Farenheit to Celsius converter{0}{0}Temperature in Farenheit?", System.Environment.NewLine);
             double number = 0;
@@ -10,7 +10,7 @@
 
             System.Console.WriteLine(
                 "{0}° Farenheit is {1}{2} Celsius",
-                number, ( (number - 32.0) * 5 / 9).ToString("0.#"),
+                number, ((number - 32.0) * 5 / 9).ToString("0.#"),
                 (char)176);
             System.Console.ReadLine();
         }

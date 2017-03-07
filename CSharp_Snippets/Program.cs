@@ -26,25 +26,27 @@ namespace CSharp_Snippets
                 "[9] Encoder{0}" +
                 "[10] Prime Numbers{0}" +
                 "[11] 5 Unique Numbers{0}" +
-                "[12] Dictionary of Stats"
+                "[12] Dictionary of Stats{0}" +
+                "[13] Equation Solver"
                 , Environment.NewLine
                 );
 
-            switch (getInput(0,12)) {
+            switch (getInput(0, 13))
+            {
                 case QUIT: Environment.Exit(0); break;
-                case 1: Spaceship.play(); break;
-                case 2: Calculator.play(); break;
-                case 3: GuessNumber.play(); break;
-                case 4: Registration.play(); break;
-                case 5: OOP.play(); break;
-                case 6: AuctionPosts.play(); break;
-                case 7: ThrowException.play(); break;
-                case 8: FarenheitToCelsius.play(); break;
-                case 9: LengthEncoder.play(); break;
-                case 10: PrimeNumbers.play(); break;
-                case 11: FiveDigits.play(); break;
-                case 12: DictionaryStats.play(); break;
-
+                case 1: new Spaceship().Play(); break;
+                case 2: new Calculator().Play(); break;
+                case 3: new GuessNumber().Play(); break;
+                case 4: new Registration().Play(); break;
+                case 5: new OOP().Play(); break;
+                case 6: new AuctionPosts().Play(); break;
+                case 7: new ThrowException().Play(); break;
+                case 8: new FarenheitToCelsius().Play(); break;
+                case 9: new LengthEncoder().Play(); break;
+                case 10: new PrimeNumbers().Play(); break;
+                case 11: new FiveDigits().Play(); break;
+                case 12: new DictionaryStats().Play(); break;
+                case 13: new Equation().Play(); break;
                 default:
                     Console.WriteLine("Invalid number! Try another option or use {0} to quit.", QUIT);
                     Console.ReadKey();
@@ -70,7 +72,7 @@ namespace CSharp_Snippets
                 inputValid = Int32.TryParse(Console.ReadLine(), out x);
                 if (x < min || x > max) inputValid = false;
             }
-            while ( !inputValid );
+            while (!inputValid);
             return x;
         }
 

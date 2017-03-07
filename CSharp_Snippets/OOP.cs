@@ -2,9 +2,9 @@
 
 namespace CSharp_Snippets
 {
-    class OOP
+    class OOP : Play
     {
-        public static void play()
+        public void Play()
         {
             string NL = Environment.NewLine;
 
@@ -14,7 +14,7 @@ namespace CSharp_Snippets
             // Test: owner Object has a Name
             Console.WriteLine(NL + "Building human . . ." + NL);
             Person person = new Person(getName(), getDiet());
-            
+
             Console.WriteLine(NL + "Building dog . . ." + NL);
             Dog dog = new Dog(getName(), getDiet());
 
@@ -31,25 +31,25 @@ namespace CSharp_Snippets
                 Console.WriteLine(NL + "Name: " + objects[x].name + "\tDiet: " + objects[x].diet + NL + NL);
             }
 
-                Console.WriteLine(
-                    "Person says, \"{0}\"" + NL +
-                    "Dog says,\"{1}\"." + NL +
-                    "Cat says,\"{2}\"." + NL,
-                    person.speak(),
-                    dog.speak(),
-                    cat.speak()
-                    );
+            Console.WriteLine(
+                "Person says, \"{0}\"" + NL +
+                "Dog says,\"{1}\"." + NL +
+                "Cat says,\"{2}\"." + NL,
+                person.speak(),
+                dog.speak(),
+                cat.speak()
+                );
 
             Console.ReadKey();
         }
 
-        public static string getName()
+        public string getName()
         {
             Console.WriteLine("What's its name?");
             return Console.ReadLine();
         }
 
-        public static string getDiet()
+        public string getDiet()
         {
             Console.WriteLine("What's its favorite food?");
             return Console.ReadLine();

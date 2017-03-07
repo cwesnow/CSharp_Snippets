@@ -2,9 +2,11 @@
 
 namespace CSharp_Snippets
 {
-    class PrimeNumbers
+    class PrimeNumbers : Play
     {
-        public static void play(){
+
+        public void Play()
+        {
             bool isValid = false;
             int userInput = 0;
             const int MIN = 2;
@@ -24,7 +26,8 @@ namespace CSharp_Snippets
                 if (MAX < userInput || MIN > userInput)
                 {
                     isValid = false;
-                    Console.WriteLine("Invalid Input, Try another Number"); }
+                    Console.WriteLine("Invalid Input, Try another Number");
+                }
             }
             Console.WriteLine();
 

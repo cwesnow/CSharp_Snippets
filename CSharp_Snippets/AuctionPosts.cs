@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CSharp_Snippets
 {
-    class AuctionPosts
+    class AuctionPosts : Play
     {
         static List<Post> allListings = new List<Post>();
         static string userID = null;
@@ -11,7 +11,7 @@ namespace CSharp_Snippets
         /// <summary>
         /// Similar to a static void main() Method for this class.
         /// </summary>
-        public static void play()
+        public void Play()
         {
             // Populate some random data
             setupListings();
@@ -37,7 +37,7 @@ namespace CSharp_Snippets
         /// <summary>
         /// Loads up Test Data to verify operation
         /// </summary>
-        private static void setupListings()
+        private void setupListings()
         {
             for (int x = 0; x < 10; x++)
             {
@@ -61,7 +61,7 @@ namespace CSharp_Snippets
         /// <summary>
         /// User inputs their ID, No security methods
         /// </summary>
-        private static void login()
+        private void login()
         {
             Console.WriteLine("Login ID");
             userID = Console.ReadLine();
@@ -70,7 +70,7 @@ namespace CSharp_Snippets
         /// <summary>
         /// Creates a new Post with user edits and adds it to the List: allListings"
         /// </summary>
-        private static void newPost()
+        private void newPost()
         {
             Post post = new Post();
             post.userID = userID;
@@ -86,7 +86,7 @@ namespace CSharp_Snippets
         /// Loops through all Postings, reviews matched userID and Title.
         /// Multiple Posts can be found with same userID and TItle.
         /// </summary>
-        private static void editPost()
+        private void editPost()
         {
             string title = editTitle();
             string input = "";
@@ -131,7 +131,7 @@ namespace CSharp_Snippets
         /// <summary>
         /// Displays all Posts that userID has made
         /// </summary>
-        private static void displayPosts()
+        private void displayPosts()
         {
             int x = 0;
             Console.WriteLine("Displaying all Posts for user# {0}\n", userID);
@@ -151,7 +151,7 @@ namespace CSharp_Snippets
         /// Prompts user for Title name and validates input before returning it
         /// </summary>
         /// <returns>String between 3 and 25 characters long</returns>
-        private static string editTitle()
+        private string editTitle()
         {
             string result;
             do
@@ -171,7 +171,7 @@ namespace CSharp_Snippets
         /// Prompts user for Category input, validates before returning it
         /// </summary>
         /// <returns>String equal to S, R, or F</returns>
-        private static string editCategory()
+        private string editCategory()
         {
             string result;
             do
@@ -186,7 +186,7 @@ namespace CSharp_Snippets
         /// Prompts user for a Description, validates before returning it
         /// </summary>
         /// <returns>String with Length at or below 160 characters</returns>
-        private static string editDescription()
+        private string editDescription()
         {
             string result;
             do
@@ -203,7 +203,7 @@ namespace CSharp_Snippets
         /// Prompts user for a Price, validates before returning it
         /// </summary>
         /// <returns>double between double.minValue and double.maxValue</returns>
-        private static double editPrice()
+        private double editPrice()
         {
             bool validInput = false;
             double result = 0;

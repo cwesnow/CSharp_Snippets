@@ -3,21 +3,21 @@ using System.Text;
 
 namespace CSharp_Snippets
 {
-    class LengthEncoder
+    class LengthEncoder : Play
     {
-        public static void play()
+        public void Play()
         {
             bool running = true;
 
             Console.Title = "Encoder V 1.0";
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.BackgroundColor = ConsoleColor.Black;
-            
-            while(running)
+
+            while (running)
             {
                 Menu();
-                
-                switch ( getChoice("Enter a number:") )
+
+                switch (getChoice("Enter a number:"))
                 {
                     case "1":
                         decompress();
@@ -41,13 +41,13 @@ namespace CSharp_Snippets
             }
         }
 
-        static string getChoice(string prompt)
+        string getChoice(string prompt)
         {
             Console.Write(prompt);
             return Console.ReadLine();
         }
 
-        static void Menu()
+        void Menu()
         {
             Console.Clear();
             Console.WriteLine(
@@ -62,11 +62,11 @@ namespace CSharp_Snippets
                 );
         }
 
-        static void decompress()
+        void decompress()
         {
             string cString = getChoice("Enter compressed string: ");
 
-            if ( Validate(cString) )
+            if (Validate(cString))
             {
                 Console.WriteLine("Decompressed string: {0}", decompress(cString));
             }
@@ -76,14 +76,14 @@ namespace CSharp_Snippets
             }
         }
 
-        static string decompress(string inputString)
+        string decompress(string inputString)
         {
             StringBuilder sb = new StringBuilder();
 
             for (int x = 0; x < inputString.Length / 2; x++)
             {
                 int y;
-                int.TryParse(inputString.Substring(x * 2+1, 1), out y);
+                int.TryParse(inputString.Substring(x * 2 + 1, 1), out y);
                 while (y > 0)
                 {
                     sb.Append(inputString[x * 2]);
@@ -94,7 +94,7 @@ namespace CSharp_Snippets
             return sb.ToString();
         }
 
-        static Boolean Validate(string inputstring)
+        bool Validate(string inputstring)
         {
             int position = 1;
             Boolean valid = true;
@@ -116,41 +116,42 @@ namespace CSharp_Snippets
             return valid;
         }
 
-        static void compress()
+        void compress()
         {
             string dString = getChoice("Enter de-compressed string: ");
-            Console.WriteLine( "Compressed string: {0}", compress(dString) );
+            Console.WriteLine("Compressed string: {0}", compress(dString));
         }
 
-        static string compress(string input)
+        string compress(string input)
         {
             // HELLO --> H1 E1 L2 O1 4 sequences... 
             StringBuilder sb1 = new StringBuilder(input + " ");
             StringBuilder sb2 = new StringBuilder();
             int count = 0;
 
-            for (int x = 0; x < sb1.Length-1; x++)
+            for (int x = 0; x < sb1.Length - 1; x++)
             {
                 count++;
 
-                if (sb1[x] != sb1[x + 1]) {
+                if (sb1[x] != sb1[x + 1])
+                {
                     sb2.Append(sb1[x]);
                     sb2.Append(count);
                     count = 0;
                 }
             }
 
-                return sb2.ToString();
+            return sb2.ToString();
         }
 
-        static void CompressionRatio()
+        void CompressionRatio()
         {
-                        string dString = getChoice("Enter uncompressed string: ");
-                        string cString = getChoice("Enter compressed string: ");
-                        Console.WriteLine( "Space Savings: {0}%", (CompressionRatio(dString, cString)*100).ToString("0") );
+            string dString = getChoice("Enter uncompressed string: ");
+            string cString = getChoice("Enter compressed string: ");
+            Console.WriteLine("Space Savings: {0}%", (CompressionRatio(dString, cString) * 100).ToString("0"));
         }
 
-        static double CompressionRatio(string decompressed, string compressed)
+        double CompressionRatio(string decompressed, string compressed)
         {
             return compressed.Length / (double)decompressed.Length;
         }

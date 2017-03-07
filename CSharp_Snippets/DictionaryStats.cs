@@ -11,11 +11,12 @@ namespace CSharp_Snippets
         public int max { get; set; }
     }
 
-    enum Stats { Blood, Weight, Age, Speed, Learning, Height }
+    enum Stats { Height, Weight, Age, Blood, Speed, Learning, }
 
-    class DictionaryStats
+    class DictionaryStats : Play
     {
-        public static void play(){
+        public void Play()
+        {
             Dictionary<Stats, AbstractStat> statsDic = new Dictionary<Stats, AbstractStat>();
 
             foreach (Stats entry in Enum.GetValues(typeof(Stats)))
@@ -28,7 +29,7 @@ namespace CSharp_Snippets
                 x.Value.name = x.Key.ToString();
                 x.Value.min = 0;
                 x.Value.max = 10;
-                x.Value.current = DateTime.Now.Millisecond%11;
+                x.Value.current = DateTime.Now.Millisecond % 11;
 
                 Console.WriteLine("Name: {1}{0}  Range: {2} to {3}{0}  Current {4}{0}",
                     Environment.NewLine, x.Value.name, x.Value.min, x.Value.max, x.Value.current);

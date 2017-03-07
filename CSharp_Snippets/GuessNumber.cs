@@ -2,9 +2,9 @@
 
 namespace CSharp_Snippets
 {
-    class GuessNumber
+    class GuessNumber : Play
     {
-        public static void play()
+        public void Play()
         {
             int minimum = 1;
             int maximum = 100;
@@ -23,11 +23,11 @@ namespace CSharp_Snippets
                         minimum = guessedNumber;
                         maximum = guessedNumber;
                         break;
-                    
+
                     case "LOW":
                         minimum = guessedNumber + 1;
                         break;
-                    
+
                     case "HIGH":
                         maximum = guessedNumber - 1;
                         break;
@@ -39,7 +39,7 @@ namespace CSharp_Snippets
             Console.ReadKey();
         }
 
-        private static void errorCheck(int low, int high)
+        private void errorCheck(int low, int high)
         {
             if (low > high)
             {
@@ -47,19 +47,19 @@ namespace CSharp_Snippets
 
             }
         }
-        
-        private static void intro()
+
+        private void intro()
         {
-            Console.WriteLine("{0}{0}Welcome to the Game!{0}{0} Pick a number between 1 and 100 and I'll guess it.{0}",
+            Console.WriteLine("{0}{0}Welcome to the Game!{0}{0} Pick a number between 1 and 100 and the computer will guess it.{0}",
                 Environment.NewLine);
         }
 
-        private static int guess(int low, int high)
+        private int guess(int low, int high)
         {
             return new Random().Next(low, high);
         }
 
-        private static string promptCorrectLowHigh()
+        private string promptCorrectLowHigh()
         {
             string input = "";
 
@@ -73,7 +73,7 @@ namespace CSharp_Snippets
             return input;
         }
 
-        private static void win(int x)
+        private void win(int x)
         {
             Console.WriteLine("Your number is {0}!", x);
         }

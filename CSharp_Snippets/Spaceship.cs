@@ -5,12 +5,12 @@ namespace CSharp_Snippets
     /// <summary>
     /// Builds a Spaceship inside a Console Screen
     /// </summary>
-    class Spaceship
+    class Spaceship : Play
     {
         /// <summary>
         /// Program draws a spaceship 3 different ways
         /// </summary>
-        public static void play()
+        public void Play()
         {
             Console.Clear();
 
@@ -39,7 +39,7 @@ namespace CSharp_Snippets
         /// <summary>
         /// Draw a Spaceship
         /// </summary>
-        public static void spaceship1()
+        public void spaceship1()
         {
             Console.WriteLine(
                 "   /**\\       {0}" +
@@ -66,7 +66,7 @@ namespace CSharp_Snippets
         /// <summary>
         /// Draw a Spaceship using a String Variables
         /// </summary>
-        public static void spaceship2()
+        public void spaceship2()
         {
 
             string A = "   /**\\";
@@ -103,7 +103,7 @@ namespace CSharp_Snippets
         /// <summary>
         /// Draw a Spaceship using a Loop
         /// </summary>
-        public static void spaceship3()
+        public void spaceship3()
         {
             for (int y = 2; y < 20; y++)
             {
@@ -211,6 +211,5 @@ namespace CSharp_Snippets
                 Console.WriteLine();
             }
         }
-
     }
 }

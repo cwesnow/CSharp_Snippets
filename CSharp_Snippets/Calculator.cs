@@ -5,9 +5,10 @@ namespace CSharp_Snippets
     /// <summary>
     /// Calculator for the command line
     /// </summary>
-    class Calculator
+    class Calculator : Play
     {
-        public static void play(){
+        public void Play()
+        {
             bool validInput = false;
             string operation;
             decimal one = 0m;
@@ -16,12 +17,12 @@ namespace CSharp_Snippets
 
             Console.Clear();
             Console.WriteLine("{0}Calculator Application{0}{0}", Environment.NewLine);
-            
+
             do
             {
                 Console.Write("{0}Input First Number >>>", Environment.NewLine);
                 validInput = decimal.TryParse(Console.ReadLine(), out one);
-            } while ( !validInput );
+            } while (!validInput);
 
             do
             {
@@ -36,24 +37,25 @@ namespace CSharp_Snippets
                     validInput = false;
                 }
 
-            } while ( !validInput );
+            } while (!validInput);
 
             do
             {
                 Console.Write("{0}Input Second Number >>>", Environment.NewLine);
                 validInput = decimal.TryParse(Console.ReadLine(), out two);
-            } while ( !validInput );
+            } while (!validInput);
 
             if (operation == "/" && two == 0)
                 Console.WriteLine("Error! Dividing by Zero is Undefined");
-            else {
+            else
+            {
                 if (operation == "+") ans = one + two;
                 if (operation == "-") ans = one - two;
                 if (operation == "*") ans = one * two;
                 if (operation == "/") ans = one / two;
                 Console.WriteLine("Output: {0} {1} {2} = {3}", one, operation, two, ans);
             }
-                
+
             Console.ReadKey();
         }
     }

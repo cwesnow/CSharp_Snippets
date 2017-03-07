@@ -2,13 +2,13 @@
 
 namespace CSharp_Snippets
 {
-    class ThrowException
+    class ThrowException : Play
     {
-        public static void play()
+        public void Play()
         {
             bool isCreditGood = false;
             int credit = 0;
-            
+
             Console.Clear();
             Console.Write("{0}Error Handling Program{0}{0}" +
                 "Input Credit Score - Expected scores 350 to 850{0}" +
@@ -29,7 +29,7 @@ namespace CSharp_Snippets
                 {
                     Console.WriteLine("Your credit is bad!");
                 }
- 
+
             }
             catch (ArgumentOutOfRangeException e)
             {
@@ -39,7 +39,7 @@ namespace CSharp_Snippets
             Console.ReadLine();
         }
 
-        private static bool checkCredit(int score)
+        private bool checkCredit(int score)
         {
             if (350 > score || score > 850) throw new System.ArgumentOutOfRangeException();
             return (650 <= score);

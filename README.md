@@ -33,3 +33,27 @@
 ## Sample 7 - Exception Handling
 
   Generally we like to pretend like every program will never encounter an error or experience bad user input that can corrupt the system.  However, in the case where we can't prevent everything there is a way to catch these exceptions.  Our method or system can be designed to throw these Exceptions that can be caught and later handled appropriately.  We can even design our own Exceptions with custom Handling Methods in our code... but this example just shows throwing an error and catching it for now.
+
+## Sample 8 - Temperature Conversion
+
+  Basic Farenheit to Celsius calculator with a Number Validator and displays Degree Symbols correctly. Uses two different methods of showing custom degree symbol, and Temperature's are truncated for users to avoid long insignificant decimal numbers.
+  
+## Sample 9 - (RLE) Encoder
+
+  Demonstrates basic compression using the Run Length Encoder (RLE) Method. Combines redundant characters and counts them to quickly compres long redenduant numbers into something simple like , 3333333333 would simply be the number 3 10 times. It also allows for comparing between uncompressed and compressed versions to see how much it has reduced the size of the string or file.
+  
+## Sample 10 - Prime Numbers
+
+  Displays Prime Numbers starting with 2 up to the Size of your Console - 8. Users are allowed to enter any number between 2 and their systems limitation. Provides a simple Invalidation process and retries for the user input. The system then runs through every number up to their input and validates primes with a string of X to represent it passed the test for each number leading up to it. A column to the left simplifies the Prime Numbers found. The X representations provides a visual representations of how the Primes are spaces away from each other, or how many numbers are between them.
+  
+## Sample 11 - Unique Numbers
+
+Provides unique random numbers, until the "magic number" is hit. This program mimics a password/pin that needs to be figured out and instead of brute forcing sequentially is using a random generator to avoid starting at "0" and waiting until "9999" to find it. Uses a Hash to avoid using the same numbers multiple times, and pauses every 10 combinations for User interaction/testing.
+
+## Sample 12 - Dictionary with Enums
+
+Provides a Dictionary of Stats for a basic game system. This allows for an easy character generator that uses ENUMS for the Stats Name, and AbstractClass to setup it's Name, Min, Max, and Current status for the character.
+
+## Sample 13 - Equestion Solver
+
+A more advanced calculated that attempts to parse equations for the user. Allowing the user to type in 1 + 2, instead of the basic calculator needing the user to specify each number and math symbol individually.
